@@ -8,5 +8,9 @@
 
 	$query = new MongoDB\Driver\Query($filter, $options);
 
-	$rows = $conn->executeQuery('SportMagazine.news', $query); // $mongo contains the connection object to MongoDB
+	$rows = $conn->executeQuery($db, $query); // $mongo contains the connection object to MongoDB
+
+    foreach ($rows as $document) {
+        echo $document->{'title'};
+    }
 ?>

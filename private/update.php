@@ -19,12 +19,12 @@
             'author' => $author, 
             'category' => $category, 
             'text' => $text, 
-            'thread.main_image' => $main_image,
+            'main_image' => $main_image,
             'published' => $date]
         ],
     );
 
-    $result = $conn->executeBulkWrite('SportMagazine.news', $bulk);
+    $result = $conn->executeBulkWrite($db, $bulk);
     if($result)
         {
             echo '<script> alert("Data Updated"); </script>';

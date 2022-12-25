@@ -8,7 +8,7 @@
         ['_id' => $id]        
     );
 
-    $result = $conn->executeBulkWrite('SportMagazine.news', $bulk);
+    $result = $conn->executeBulkWrite($db, $bulk);
     if($result)
         {
             echo '<script> alert("Data Updated"); </script>';

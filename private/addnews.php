@@ -6,25 +6,25 @@
     $category = $_POST['category'];
     $text = $_POST['content'];
     $date = $_POST['datepicker'];
-    echo $date;
-    $main_image = $_POST['image'];
+    $main_image = $_POST['main_image'];
     
     $bulk = new MongoDB\Driver\BulkWrite;
-    $bulk->insert(
-        [
+    $bulk->insert([
             'title' => $title, 
             'author' => $author, 
             'category' => $category, 
             'text' => $text, 
-            'thread.main_image' => $main_image,
-            'published' => $date],
+            'main_image' => $main_image,
+            'published' => $date,
+            'view' => 0
+        ],
     );
 
-    $result = $conn->executeBulkWrite('SportMagazine.news', $bulk);
+    $result = $conn->executeBulkWrite($db, $bulk);
     if($result)
         {
             echo '<script> alert("Data Updated"); </script>';
-            //header("Location:../php/dashboard.php");
+            header("Location:../php/dashboard.php");
         }
         else
         {
