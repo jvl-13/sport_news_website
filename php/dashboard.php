@@ -6,7 +6,7 @@
 
 	$query = new MongoDB\Driver\Query($filter, $options);
 
-	$rows = $conn->executeQuery('SportMagazine.news', $query); // $mongo contains the connection object to MongoDB
+	$rows = $conn->executeQuery($db, $query); // $mongo contains the connection object to MongoDB
 ?>
 
 <!DOCTYPE html>
@@ -39,12 +39,12 @@
     <div class="">
         <div class="bg-warning d-flex">
             <h4 class="p-2" style="font-weight: bold; font-family: var(--heading);">ADMIN_SNEWS</h4>
-            <a class="ms-auto p-2" href="/pages/home.html">Logout<span> <img src="../assests/logout.png" style="width: 20px; height: 20px; margin-bottom: 2px;"/></span></a>
+            <a class="ms-auto p-2" href="../private/logout.php">Logout<span> <img src="../assests/logout.png" style="width: 20px; height: 20px; margin-bottom: 2px;"/></span></a>
         </div>
         
         <div class="mx-4">
             <p class="fw-bold mt-4">DATATABLE SPORT NEWS</p>
-            <p>Total news: 100000</p>
+            <p>Total news: 13</p>
         </div>        
     
         <!--Add Modal -->
@@ -140,7 +140,7 @@
                             '<td>'.$document->{'title'}.'</td>'.
                             '<td>'.$document->{'author'}.'</td>'.
                             '<td>'.$document->{'category'}.'</td>'.
-                            '<td>'.date('Y-m-d', $document->{'published'}).'</td>'.
+                            '<td>'.date($document->{'published'}).'</td>'.
                             '<td class="" style="width: 300rem;">'.
                             $document->{'text'}.
                             '</td><td>'.$document->{'thread'}->{'participants_count'}.'</td>'.

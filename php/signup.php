@@ -1,10 +1,3 @@
-<?php
-					// If the user had an invalid username/password combination prompt this alert
-  if ($_GET['errcode'] == 1 ){
-      echo '<p class="alert alert-danger">&nbsp</span>Oops! Wrong username/password combination</p> ';
-  }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,10 +17,10 @@
     <link href="../global.css" rel="stylesheet">
 
     
-    <title>Login</title>
+    <title>Sign up</title>
 </head>
 <body class="bg-warning">
-        <!-- navbar -->
+    <!-- navbar -->
     <div>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <div class="container-fluid mx-4">
@@ -84,41 +77,50 @@
               </div>
           </div>
       </nav>
-    </div>
+  </div>
+
     <section class="vh-100 gradient-custom">
-        <div class="container py-5 h-100">
+        <div class="container h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
               <div class="card bg-dark text-white" style="border-radius: 1rem;">
                 <div class="card-body p-5 text-center">
-                  <form action="../private/login.php" method="POST">
+                <form action = "../private/signup.php" method = "POST">
                     <div class="">
+      
+                        <h2 class="fw-bold mb-2 text-uppercase">Sign up</h2>
+                        <!-- <p class="text-white-50">Hi Admin!</p> -->
+                        <!-- <p class="text-white-50 mb-5">Please enter your email and password!</p> -->
         
-                      <h2 class="fw-bold mb-2 text-uppercase">Sign in</h2>
-                      <!-- <p class="text-white-50">Hi Admin!</p> -->
-                      <p class="text-white-50 mb-5">Please enter your username and password!</p>
+                        <div class="form-outline form-white mb-4">
+                            <label class="form-label" for="typeEmailX">Email</label>
+                            <input type="email" id="typeEmailX" class="form-control form-control-lg" name="email"/>
+                        </div>
         
-                      <div class="form-outline form-white mb-4">
-                          <label class="form-label" for="typeEmailX">Email</label>
-                          <input type="email" id="typeEmailX" class="form-control form-control-lg" name="email" />
-                      </div>
-        
-                      <div class="form-outline form-white mb-4">
-                          <label class="form-label" for="typePasswordX">Password</label>
-                          <input type="password" id="typePasswordX" class="form-control form-control-lg" name="password" />
-                      </div>
+                        <div class="form-outline form-white mb-4">
+                            <label class="form-label" for="typeEmailX">User name</label>
+                            <input type="text" id="typeUsernameX" class="form-control form-control-lg" name="username"/>
+                        </div>
 
-                      <button type="submit" class="btn btn-outline-light btn-lg px-5 mt-4">Sign in</button>
-                      
+                        <div class="form-outline form-white mb-4">
+                            <label class="form-label" for="typePasswordX">Password</label>
+                            <input type="password" id="typePasswordX" class="form-control form-control-lg" name="password"/>
+                        </div>
+
+                        <div class="form-outline form-white mb-4">
+                            <label class="form-label" for="typePasswordX">Confirm password</label>
+                            <input type="password" id="typePasswordXConfirm" class="form-control form-control-lg" name="confirm_password"/>
+                        </div>
         
-                      <!-- <div class="d-flex justify-content-center text-center mt-4 pt-1">
+                        <button type="submit" class="btn btn-outline-light btn-lg px-5 mt-4">Sign up</button>
+                        <!-- <div class="d-flex justify-content-center text-center mt-4 pt-1">
                         <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
                         <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
                         <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
-                      </div> -->
-        
+                        </div> -->
+    
                     </div>
-                  </form>
+                </form>
       
                   <!-- <div>
                     <p class="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Sign Up</a>
@@ -131,19 +133,19 @@
           </div>
         </div>
       </section>
-    
+
       <!-- FOOTER -->
 
       <footer class="text-center text-white bg-dark" >
         <!-- Grid container -->
-
+        
         <div class="container pt-4">
           <!-- Section: Social media -->
           <a class="fs-2" style="color: white; font-weight: bold; text-decoration: none;" href="#"><span class="text-warning">S</span style="text-color: white; ">News</a>
 
           <section class="mb-4">
             <!-- Facebook -->
-
+          
             <a
               class="btn btn-link btn-floating btn-lg text-white m-1"
               href="#!"
@@ -151,7 +153,7 @@
               data-mdb-ripple-color="dark"
               ><i class="fab fa-facebook-f"></i
             ></a>
-
+      
             <!-- Twitter -->
             <a
               class="btn btn-link btn-floating btn-lg text-white m-1"
@@ -160,7 +162,7 @@
               data-mdb-ripple-color="white"
               ><i class="fab fa-twitter"></i
             ></a>
-
+      
             <!-- Google -->
             <a
               class="btn btn-link btn-floating btn-lg text-white m-1"
@@ -169,7 +171,7 @@
               data-mdb-ripple-color="white"
               ><i class="fab fa-google"></i
             ></a>
-
+      
             <!-- Instagram -->
             <a
               class="btn btn-link btn-floating btn-lg text-white m-1"
@@ -178,7 +180,7 @@
               data-mdb-ripple-color="white"
               ><i class="fab fa-instagram"></i
             ></a>
-
+      
             <!-- Linkedin -->
             <a
               class="btn btn-link btn-floating btn-lg text-white m-1"
@@ -199,7 +201,7 @@
           <!-- Section: Social media -->
         </div>
         <!-- Grid container -->
-
+      
         <!-- Copyright -->
         <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
           © 2020 Copyright:

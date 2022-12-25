@@ -1,3 +1,8 @@
+<?php
+    $text_query = $_GET['query'];
+    include "../private/search.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +30,7 @@
         <div>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container-fluid mx-4">
-                    <a class="navbar-brand fs-2" style="color: white; font-weight: bold; text-decoration: none;" href="/pages/home.html"><span class="text-warning">S</span style="text-color: white; ">News</a>
+                    <a class="navbar-brand fs-2" style="color: white; font-weight: bold; text-decoration: none;" href="../php/home.php"><span class="text-warning">S</span style="text-color: white; ">News</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +39,7 @@
                     <div class="collapse navbar-collapse ms-4" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a  class="nav-link" aria-current="page" href="/pages/home.html" id="soccer" >Sport</a>
+                                <a  class="nav-link" aria-current="page" href="../php/home.php" id="soccer" >Sport</a>
                             </li>
                             <!-- <li class="nav-item">
                                 <a class="nav-link" aria-current="page" href="#ranking" id="ranking">Ranking</a>
@@ -49,13 +54,13 @@
                                 <a class="nav-link" aria-current="page" href="#highlights" id="highlights">Highlights</a>
                             </li> -->
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="/pages/highlight.html" id="highlight">Highlight</a>
+                                <a class="nav-link" aria-current="page" href="../php/highlight.php" id="highlight">Highlight</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="/pages/latest.html" id="latest">Latest</a>
+                                <a class="nav-link" aria-current="page" href="../php/latest.php" id="latest">Latest</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="/pages/categories.html" id="categories">Categories</a>
+                                <a class="nav-link" aria-current="page" href="../php/categories.php" id="categories">Categories</a>
                             </li>
                             <!-- <li class="nav-item">
                                 <a class="nav-link" aria-current="page" href="#other" id="other">Other</a>
@@ -64,7 +69,7 @@
                         <form class="d-flex">
                             <input class="form-control me-2" type="text" id="newsQuery" placeholder="Search news">
                             <button class="btn btn-outline-warning bg-warning" type="button" id="searchBtn">
-                                <a style="text-decoration: none;" href="/pages/search.html">Search</a>
+                                <a style="text-decoration: none;" href="/php/search.php">Search</a>
                             </button>
                         </form>
                     </div>
@@ -78,77 +83,27 @@
             <h2 class="my-3" style="font-weight: bold; font-family: var(--heading); color: var(--primary-color);">SEARCH</h2>
 
             <div class="row row-cols-1 row-cols-md-1 row-cols-sm-1 mb-5">
-                <div class="col-lg-4 mb-3">
-                    <a href="content-news.html">
-                        <img src="../../assests/sp.jpg" class="img-thumbnail d-block" alt=""/>
-                    </a>
-                    
-                    <div>
-                        <a href="content-news.html">
-                            <h2 class="d-block mt-2" style="font-size: 18px; font-family: var(--heading); height: 65px; overflow: hidden;">
-                                Marcus Rashford says Gareth Southgate has raised training standards at England with greater intensity and dedication
-                            </h2>
-                        </a>
-    
-                        <p style="font-size: 16px; text-align: justify; display: block; height: 117px; overflow: hidden;">Marcus Rashford: "For this squad, I feel like it's never really been an issue ever since Gareth has been the manager. Maybe before it was a bit of an issue in terms of quality of training, and people's dedication, but since Gareth has been manager, it's been intense."</p>
-                        <p class="d-block" style="font-family: var(--heading); font-weight:300; font-size: 14px; height: 10px;">25 November 2022<span> <img src="../assests/eye.png" style="width: 20px; height: 20px; margin-bottom: 2px;"/> 100 views</span></p>
-                        <a style="font-size: 14px; color: var(--primary-color);" href="content-news.html">Read More<span> >></span></a>
-                    </div>
-                </div>
-    
-                <div class="col-lg-4 mb-3">
-                    <a href="content-news.html">
-                        <img src="../../assests/sp.jpg" class="img-thumbnail d-block" alt=""/>
-                    </a>
-    
-                    <div>
-                        <a href="content-news.html">
-                            <h2 class="d-block mt-2" style="font-size: 18px; font-family: var(--heading); height: 65px; overflow: hidden;">
-                                Iran defeat not a true reflection of Wales | 'We want to finish on a high' 
-                            </h2>
-                        </a>
-    
-                        <p style="font-size: 16px; text-align: justify; display: block; height: 117px; overflow: hidden;">Lionel Messi had endured a deeply frustrating evening against Mexico at the Lusail Stadium his struggles mirroring those of the Argentina team as a whole..</p>
-                        <p class="d-block" style="font-family: var(--heading); font-weight:300; font-size: 14px; height: 10px;">25 November 2022<span> <img src="../assests/eye.png" style="width: 20px; height: 20px; margin-bottom: 2px;"/> 100 views</span></p>
-                        <a style="font-size: 14px; color: var(--primary-color);" href="content-news.html">Read More<span> >></span></a>
-                    </div>
-                </div>
-    
-                <div class="col-lg-4 mb-3">
-                    <a href="content-news.html">
-                        <img src="../../assests/sp.jpg" class="img-thumbnail d-block" alt=""/>
-                    </a>
-    
-                    <div>
-                        <a href="content-news.html">
-                            <h2 class="d-block mt-2" style="font-size: 18px; font-family: var(--heading); height: 65px; overflow: hidden;">
-                                Iran defeat not a true reflection of Wales | 'We want to finish on a high' 
-                            </h2>
-                        </a>
-    
-                        <p style="font-size: 16px; text-align: justify; display: block; height: 117px; overflow: hidden;">Lionel Messi had endured a deeply frustrating evening against Mexico at the Lusail Stadium his struggles mirroring those of the Argentina team as a whole..</p>
-                        <p class="d-block" style="font-family: var(--heading); font-weight:300; font-size: 14px; height: 10px;">25 November 2022<span> <img src="../assests/eye.png" style="width: 20px; height: 20px; margin-bottom: 2px;"/> 100 views</span></p>
-                        <a style="font-size: 14px; color: var(--primary-color);" href="content-news.html">Read More<span> >></span></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-3">
-                    <a href="content-news.html">
-                        <img src="../../assests/sp.jpg" class="img-thumbnail d-block" alt=""/>
-                    </a>
-    
-                    <div>
-                        <a href="content-news.html">
-                            <h2 class="d-block mt-2" style="font-size: 18px; font-family: var(--heading); height: 65px; overflow: hidden;">
-                                Iran defeat not a true reflection of Wales | 'We want to finish on a high' 
-                            </h2>
-                        </a>
-    
-                        <p style="font-size: 16px; text-align: justify; display: block; height: 117px; overflow: hidden;">Lionel Messi had endured a deeply frustrating evening against Mexico at the Lusail Stadium his struggles mirroring those of the Argentina team as a whole..</p>
-                        <p class="d-block" style="font-family: var(--heading); font-weight:300; font-size: 14px; height: 10px;">25 November 2022<span> <img src="../assests/eye.png" style="width: 20px; height: 20px; margin-bottom: 2px;"/> 100 views</span></p>
-                        <a style="font-size: 14px; color: var(--primary-color);" href="content-news.html">Read More<span> >></span></a>
-                    </div>
-                </div>
-                
+                <?php
+                    foreach ($cursor as $document) {
+                        echo '<div class="col-lg-4 mb-3">'.
+                            '<a href="content-news.php?prop_id='.$document->{'_id'}.'">'.
+                                '<img src="'.$document->{'main_image'}.'" class="img-thumbnail d-block" alt=""/>'.
+                            '</a>'.
+                            
+                            '<div>'.
+                                '<a href="content-news.php?prop_id='.$document->{'_id'}.'">'.
+                                    '<h2 class="d-block mt-2" style="font-size: 18px; font-family: var(--heading); height: 65px; overflow: hidden;">'.
+                                    $document->{'title'}.
+                                    '</h2>'.
+                                '</a>'.
+            
+                                '<p style="font-size: 16px; text-align: justify; display: block; height: 117px; overflow: hidden;">'.$document->{'text'}.'</p>'.
+                                '<p class="d-block" style="font-family: var(--heading); font-weight:300; font-size: 14px; height: 10px;">'.$document->{'published'}.'<span> <img src="../assests/eye.png" style="width: 20px; height: 20px; margin-bottom: 2px;"/>'.$document->{'view'}.'</span></p>'.
+                                '<a style="font-size: 14px; color: var(--primary-color);" href="content-news.php?prop_id='.$document->{'_id'}.'">Read More<span> >></span></a>'.
+                            '</div>'.
+                        '</div>';
+                    };
+                ?>
             </div>
         </div>
         

@@ -1,3 +1,9 @@
+<?php
+	error_reporting(E_ERROR); //Remove any error prompts
+	session_start();
+	//if the user is already logged in, continue to home
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,11 +68,33 @@
                             </li> -->
                         </ul>
                         <form class="d-flex">
-                            <input class="form-control me-2" type="text" id="newsQuery" placeholder="Search news">
+                            <input class="form-control me-2" type="text" id="newsQuery" name="newsQuery" placeholder="Search news">
                             <button class="btn btn-outline-warning bg-warning" type="button" id="searchBtn">
-                                <a style="text-decoration: none;" href="../php/search.php">Search</a>
+                                <a style="text-decoration: none;" href="../php/search.php" onclick="this.href = this.href +'?query=' + document.getElementById('newsQuery').value;">Search</a>
                             </button>
                         </form>
+                        <?php
+                            if($_SESSION['auth'] == 0) {
+                        ?>
+                        <button style="margin-left: 40px" class="btn btn-outline-warning " type="button" id="searchBtn">
+                            <a style="text-decoration: none; color: white;" href="../php/signup.php">Sign up</a>
+                        </button>
+
+                        <button class="btn btn-outline-warning bg-warning mx-2 " type="button" id="searchBtn">
+                            <a style="text-decoration: none;" href="../php/login.php">Sign in</a>
+                        </button>
+
+                        <?php
+                        }
+                        else {
+                        ?>
+                        <p class="text-white mt-3 " style="margin-left: 40px"><?php echo $_SESSION['login-user'];?></p>
+
+                        <a class="text-white" style="margin-left: 16px;"  href="../private/logout.php">Logout<span> <img src="../assests/logout.png" style="width: 20px; height: 20px; margin-bottom: 2px;"/></span></a>
+                        <?php
+                        }
+                        ?>       
+
                     </div>
                 </div>
             </nav>

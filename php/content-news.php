@@ -7,22 +7,23 @@
 
 	$query = new MongoDB\Driver\Query($filter, $options);
 
-	$rows = $conn->executeQuery('SportMagazine.news', $query); // $mongo contains the connection object to MongoDB
+	$rows = $conn->executeQuery($db, $query); // $mongo contains the connection object to MongoDB
     $result = "";
     foreach($rows as $document) $result = $document;
     
     $viewcount = 0;
-    $viewcount = $result->{'thread'}->{'participants_count'};
+    //$viewcount = $result->{'thread'}->{'participants_count'};
+    $viewcount = $result->{'view'};
     $viewcount++;
     $bulk = new MongoDB\Driver\BulkWrite;
     $bulk->update(
         ['_id' => $prop_id],
         ['$set' => [
-            'thread.participants_count' => $viewcount
+            'view' => $viewcount
             ]
         ],
     );
-    $catch_view = $conn->executeBulkWrite('SportMagazine.news', $bulk);
+    $catch_view = $conn->executeBulkWrite($db, $bulk);
 ?>
 
 <!DOCTYPE html>
@@ -112,14 +113,13 @@
             <!-- Author & date & view -->
             <div class="my-4"  >
                 <p style="font-weight: bold;">Posted by <?php echo $result->{'author'};?></p>
-                <p>Posted in <?php echo date('d-m', $result->{'published'});?><span style="margin-left: 12px;"> <img class="" src="../assests/eye.png" style="width: 20px; height: 20px;"/> <?php echo $result->{'thread'}->{'participants_count'};?> Views</span></p>
+                <p>Posted in <?php echo $result->{'published'};?><span style="margin-left: 12px;"> <img class="" src="../assests/eye.png" style="width: 20px; height: 20px;"/> <?php echo $result->{'view'};?> Views</span></p>
             </div>
 
             <div>
                 <?php
-                    if(!$result->{'thread'}->{'main_image'}){
-                        echo '<img src='.$result->{'thread'}->{'main_image'}.' class="img-thumbnail">';
-                    } 
+                    //echo '<img src='.$result->{'thread'}->{'main_image'}.' class="img-thumbnail">';
+                    echo '<img src='.$result->{'main_image'}.' class="img-thumbnail">';
                 ?>
             </div>
             <!-- Summary -->
