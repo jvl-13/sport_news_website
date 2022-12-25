@@ -17,7 +17,7 @@
     <link href="../global.css" rel="stylesheet">
 
     
-    <title>Login</title>
+    <title>Sign up</title>
 </head>
 <body class="bg-warning">
     <!-- navbar -->
@@ -80,7 +80,7 @@
   </div>
 
     <section class="vh-100 gradient-custom">
-        <div class="container py-5 h-100">
+        <div class="container h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
               <div class="card bg-dark text-white" style="border-radius: 1rem;">
@@ -88,9 +88,9 @@
       
                   <div class="">
       
-                    <h2 class="fw-bold mb-2 text-uppercase">Sign in</h2>
+                    <h2 class="fw-bold mb-2 text-uppercase">Sign up</h2>
                     <!-- <p class="text-white-50">Hi Admin!</p> -->
-                    <p class="text-white-50 mb-5">Please enter your email and password!</p>
+                    <!-- <p class="text-white-50 mb-5">Please enter your email and password!</p> -->
       
                     <div class="form-outline form-white mb-4">
                         <label class="form-label" for="typeEmailX">Email</label>
@@ -98,12 +98,22 @@
                     </div>
       
                     <div class="form-outline form-white mb-4">
+                        <label class="form-label" for="typeEmailX">User name</label>
+                        <input type="text" id="typeUsernameX" class="form-control form-control-lg" />
+                    </div>
+
+                    <div class="form-outline form-white mb-4">
                         <label class="form-label" for="typePasswordX">Password</label>
                         <input type="password" id="typePasswordX" class="form-control form-control-lg" />
                     </div>
+
+                    <div class="form-outline form-white mb-4">
+                        <label class="form-label" for="typePasswordX">Confirm password</label>
+                        <input type="password" id="typePasswordXConfirm" class="form-control form-control-lg" />
+                    </div>
     
                     <a href="/pages/dashboard.html">
-                        <button class="btn btn-outline-light btn-lg px-5 mt-4" type="submit">Sign in</button>
+                        <button class="btn btn-outline-light btn-lg px-5 mt-4" type="submit">Sign up</button>
                     </a>
       
                     <!-- <div class="d-flex justify-content-center text-center mt-4 pt-1">
