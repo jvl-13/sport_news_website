@@ -12,7 +12,7 @@
 			echo '<a href="content-news.php?prop_id='.$r->{'_id'}.'" class=""><h3 class="fs-6 mb-3 position-relative"><h3 class="fs-6 mb-3 position-relative">'.
 			$r->{'title'}.
 			'<span class="d-block fs-6" style="font-family: var(--heading); font-weight:300">'.
-			date($r->{'published'}).
+			date("d/m/Y", intval($r->{'published'}->__toString())/1000).
 			'</span></h3></a>';
 	}
 ?>

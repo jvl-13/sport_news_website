@@ -8,6 +8,8 @@
     $date = $_POST['datepicker'];
     $main_image = $_POST['main_image'];
     
+    $date_created = new \MongoDB\BSON\UTCDateTime(strtotime($date)*1000);
+
     $bulk = new MongoDB\Driver\BulkWrite;
     $bulk->insert([
             'title' => $title, 
@@ -15,7 +17,7 @@
             'category' => $category, 
             'text' => $text, 
             'main_image' => $main_image,
-            'published' => $date,
+            'published' => $date_created,
             'view' => 0
         ],
     );

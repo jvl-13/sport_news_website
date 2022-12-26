@@ -7,8 +7,9 @@
     $category = $_POST['category'];
     $text = $_POST['content'];
     $date = $_POST['datepicker'];
-    $main_image = $_POST['image'];
+    
 
+    $date_created = new \MongoDB\BSON\UTCDateTime(strtotime($date)*1000);
     
     $id = new MongoDB\BSON\ObjectID($id);
     $bulk = new MongoDB\Driver\BulkWrite;
@@ -19,9 +20,8 @@
             'author' => $author, 
             'category' => $category, 
             'text' => $text, 
-            'main_image' => $main_image,
-            'published' => $date]
-        ],
+            'published' => $date_created
+        ]],
     );
 
     $result = $conn->executeBulkWrite($db, $bulk);
